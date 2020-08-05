@@ -17,16 +17,16 @@
 <script>
   const h_statesUrl = 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv';
   async function getStateCSV(file){
+    try {
      const h_states = await fetch(file); 
-      const response = await(h_states.text());
-   try {
-    await response.then(data=>data);   
+     const response = await(h_states.text());
+      console.log(response);   
     }catch(err){
       console.log(err);
     };
   }
   
-  console.log(getStateCSV(h_statesUrl));
+ getStateCSV(h_statesUrl);
   
 </script>
 </body>
