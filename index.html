@@ -20,13 +20,13 @@
     try {
      const h_states = await fetch(file); 
      const response = await(h_states.text());
-      console.log(response);   
+      return response;   
     }catch(err){
       console.log(err);
     };
   }
   
- getStateCSV(h_statesUrl);
+ console.log(getStateCSV(h_statesUrl));
   
 </script>
 </body>
