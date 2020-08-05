@@ -15,7 +15,14 @@
   
   
 <script>
-  alert('doodah');  
+  const h_statesUrl = 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv';
+  async function getStateCSV(file){
+     const h_states = await fetch(file); 
+      const response = await(h_states.text());
+    return response;
+  }
+  
+  console.log(getStateCSV(h_statesUrl));
   
 </script>
 </body>
