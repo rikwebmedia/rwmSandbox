@@ -19,7 +19,11 @@
   async function getStateCSV(file){
      const h_states = await fetch(file); 
       const response = await(h_states.text());
-    return await response;
+   try {
+    await response.then(data=>data);   
+    }catch(err){
+      console.log(err);
+    };
   }
   
   console.log(getStateCSV(h_statesUrl));
